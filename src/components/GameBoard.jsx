@@ -12,6 +12,7 @@ export default function GameBoard() {
     { name: "Morty", XLow: 50, XHigh: 56, YLow: 32, YHigh: 57 },
 
     { name: "Tinkles", XLow: 64, XHigh: 68, YLow: 72, YHigh: 85 },
+    { name: "Pencilvester", XLow: 42, XHigh: 44, YLow: 31, YHigh: 42 },
   ]);
   const storageRef = ref(storage);
 
@@ -32,6 +33,7 @@ export default function GameBoard() {
     const pageX = Math.floor((positionX / width) * 100);
     const pageY = Math.floor((positionY / height) * 100);
 
+    console.log(pageY);
     //check if the character fits within the bounds of the selection box
 
     charLocation.map((char) => {
