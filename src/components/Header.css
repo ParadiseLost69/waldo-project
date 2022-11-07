@@ -1,0 +1,45 @@
+.header {
+  margin: 0;
+}
+
+.header__title,
+.header__title--secondary,
+.character-container__character-name {
+  font-family: "Wubba Lubba Dub Dub", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  color: aqua;
+  text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow,
+    1px 1px 0 yellow;
+  letter-spacing: 0.5rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 3rem;
+}
+
+.header__title--secondary {
+  font-size: 2rem;
+}
+
+.character-container {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  justify-content: space-between;
+}
+
+.character-container__image {
+  height: 6.25rem;
+  border-radius: 20rem;
+}
+
+.character-container__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character-container__character-name {
+  font-size: 1.5rem;
+}
