@@ -16,10 +16,8 @@ export default function GameBoard() {
 
   const [selectedCharacters, setSelectedCharacters] = useState([]);
 
-  const select = [];
   useEffect(() => {
     const imageRef = ref(storage, "images/rick-and-morty-wheres-waldo.webp");
-
     getDownloadURL(imageRef).then((url) => {
       setImageURL(url);
     });
@@ -34,7 +32,7 @@ export default function GameBoard() {
     } else {
       setSelectedCharacters((prev) => [...prev, characterName]);
     }
-    if (select.length === 3) {
+    if (selectedCharacters.length === 3) {
       console.log("you win!");
     }
   }

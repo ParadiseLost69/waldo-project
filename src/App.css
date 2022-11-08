@@ -12,3 +12,29 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.test {
+  color: red;
+  cursor: default;
+}
+.target-box {
+  height: 2rem;
+  width: 2rem;
+  border: 0.2rem solid rgba(255, 0, 0, 0.778);
+  pointer-events: none;
+  border-radius: 10rem;
+}
+
+.vertical-crosshair,
+.horizontal-crosshair {
+  border: 1px solid rgba(255, 0, 0, 0.778);
+  position: absolute;
+}
+
+.vertical-crosshair {
+  top: 50%;
+  width: 100%;
+}
+.horizontal-crosshair {
+  left: 50%;
+  height: 100%;
+}
