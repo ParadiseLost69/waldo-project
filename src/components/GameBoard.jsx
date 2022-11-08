@@ -43,9 +43,6 @@ export default function GameBoard() {
     } else {
       setSelectedCharacters((prev) => [...prev, characterName]);
     }
-    if (selectedCharacters.length === 3) {
-      console.log("you win!");
-    }
   }
 
   //Brings pop up on Click.
@@ -88,6 +85,7 @@ export default function GameBoard() {
         CheckAndAddCharacter(char.name);
       }
     });
+
     setPopUpMenuStyle({ display: "none", position: "absolute" });
   };
 
@@ -99,6 +97,7 @@ export default function GameBoard() {
         style={popUpMenuStyle}
         setStyle={setPopUpMenuStyle}
         popUpOnClick={popUpOnClick}
+        selectedCharacters={selectedCharacters}
       />
 
       {!imageURL && <h1 className="loading">Loading...</h1>}
