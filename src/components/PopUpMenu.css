@@ -1,0 +1,28 @@
+.popup-menu {
+  background-color: white;
+  display: flex;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.popup-menu__list {
+}
+
+.popup-menu__list--item {
+  padding: 1rem;
+  border-bottom: 0.0625rem solid grey;
+}
+
+.popup-menu__list--item:hover {
+  background-color: grey;
+}
+.top-item {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.bottom-item {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}

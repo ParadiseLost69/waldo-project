@@ -73,6 +73,7 @@ export default function GameBoard() {
           className="gameboard__image"
           src={imageURL}
           onClick={(e) => handleClick(e)}
+          onDragStart={(e) => e.preventDefault()}
         ></img>
       )}
 
