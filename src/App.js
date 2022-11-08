@@ -10,11 +10,6 @@ function App() {
     top: 0,
     left: 0,
   });
-  const [popUpMenuStyle, setPopUpMenuStyle] = useState({
-    position: "absolute",
-    top: 0,
-    left: 0,
-  });
 
   // const handleClick = (e) => {
   //   const { pageX, pageY } = e;
@@ -23,14 +18,6 @@ function App() {
   //   });
   // };
 
-  const handleClick = (e) => {
-    const { pageX, pageY } = e;
-    setPopUpMenuStyle((prevStyle) => {
-      return prevStyle.display === "none"
-        ? { ...prevStyle, display: "flex", top: pageY, left: pageX }
-        : { ...prevStyle, display: "none", top: pageY, left: pageX };
-    });
-  };
   const handleMove = (e) => {
     const { pageX, pageY } = e;
     setTargetBox((prevStyle) => {
@@ -44,16 +31,11 @@ function App() {
   };
   //Issue - cant click through div to select character
   return (
-    <main
-      onMouseMove={(e) => handleMove(e)}
-      onClick={(e) => handleClick(e)}
-      className="App"
-    >
+    <main onMouseMove={(e) => handleMove(e)} className="App">
       <div className="target-box" style={targetBox}>
         <div className="vertical-crosshair"></div>
         <div className="horizontal-crosshair"></div>
       </div>
-      <PopUpMenu style={popUpMenuStyle} setStyle={setPopUpMenuStyle} />
       <GameBoard />
     </main>
   );
