@@ -5,7 +5,11 @@ import MortySource from "../images/morty-pic.jpeg";
 import TinklesSource from "../images/tinkles-pic.webp";
 import PencilSource from "../images/pencilvester.gif";
 
-export default function Header() {
+export default function Header(props) {
+  // const checkStrike = (name) => {
+  //   return props.selectedCharacters.contains(name) ? "line-through" : "none";
+  // };
+
   return (
     <div className="header">
       <h1 className="header__title">

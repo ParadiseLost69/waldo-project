@@ -1,0 +1,23 @@
+.modal {
+  background-image: linear-gradient(
+    rgba(242, 255, 0, 0.846),
+    rgba(0, 247, 255, 0.846)
+  );
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__container {
+  background-color: white;
+  box-shadow: 5px 5px 5px grey;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1rem;
+}
