@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import GameBoard from "./components/GameBoard";
 import PopUpMenu from "./components/PopUpMenu";
-
+import Timer from "./components/Timer";
 function App() {
   const [targetBox, setTargetBox] = useState({
     position: "absolute",
@@ -10,6 +10,13 @@ function App() {
     top: 0,
     left: 0,
   });
+  const [timerStyle, setTimerStyle] = useState({
+    position: "fixed",
+    top: 50,
+    left: 50,
+    display: "block",
+  });
+  const [showTimer, setShowTimer] = useState(true);
 
   const [currentLocation, setCurrentLocation] = useState({ X: null, Y: null });
 
@@ -34,9 +41,22 @@ function App() {
       };
     });
   };
+
+  const handleClick = () => {
+    setShowTimer(true);
+  };
   //Issue - cant click through div to select character
   return (
     <main onMouseMove={(e) => handleMove(e)} className="App">
+      <button onClick={handleClick}>show timer</button>
+      {showTimer && (
+        <Timer
+          timerStyle={timerStyle}
+          setTimerStyle={setTimerStyle}
+          showTimer={showTimer}
+          setShowTimer={setShowTimer}
+        />
+      )}
       <div className="target-box" style={targetBox}>
         <div className="vertical-crosshair"></div>
         <div className="horizontal-crosshair"></div>

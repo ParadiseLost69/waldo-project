@@ -26,6 +26,7 @@ export default function GameBoard(props) {
     Y: null,
   });
 
+  //download image from firebase storage
   useEffect(() => {
     const imageRef = ref(storage, "images/rick-and-morty-wheres-waldo.webp");
     getDownloadURL(imageRef).then((url) => {
@@ -49,7 +50,7 @@ export default function GameBoard(props) {
   const popUpOnClick = (e, setStyleFunction) => {
     const { pageX, pageY } = e;
 
-    //sets the style but if its at the bottom it will be higher
+    //sets the pop up menu location but if its at the bottom it will display above the cursor
     setStyleFunction((prevStyle) => {
       return prevStyle.display === "none"
         ? {
