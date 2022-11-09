@@ -11,12 +11,17 @@ function App() {
     left: 0,
   });
 
-  // const handleClick = (e) => {
-  //   const { pageX, pageY } = e;
-  //   setTargetBox((prevStyle) => {
-  //     return { ...prevStyle, top: pageY - 32, left: pageX - 2 };
-  //   });
-  // };
+  const [currentLocation, setCurrentLocation] = useState({ X: null, Y: null });
+
+  const findMouseLocation = (e) => {
+    const { offsetTop, height } = e.target;
+
+    // Get the exact location of the cursor in percentage
+    const positionY = e.pageY - offsetTop;
+    const pageY = Math.floor((positionY / height) * 100);
+
+    setCurrentLocation({ Y: pageY });
+  };
 
   const handleMove = (e) => {
     const { pageX, pageY } = e;
@@ -36,7 +41,10 @@ function App() {
         <div className="vertical-crosshair"></div>
         <div className="horizontal-crosshair"></div>
       </div>
-      <GameBoard />
+      <GameBoard
+        currentLocation={currentLocation}
+        findMouseLocation={findMouseLocation}
+      />
     </main>
   );
 }

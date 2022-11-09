@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import PopUpMenu from "./PopUpMenu";
 import "./GameBoard.css";
 
-export default function GameBoard() {
+export default function GameBoard(props) {
   const [imageURL, setImageURL] = useState(null);
   const [charLocation, setCharLocation] = useState([
     { name: "Morty", XLow: 50, XHigh: 56, YLow: 32, YHigh: 57 },
@@ -48,16 +48,28 @@ export default function GameBoard() {
   //Brings pop up on Click.
   const popUpOnClick = (e, setStyleFunction) => {
     const { pageX, pageY } = e;
+
+    //sets the style but if its at the bottom it will be higher
     setStyleFunction((prevStyle) => {
       return prevStyle.display === "none"
-        ? { ...prevStyle, display: "flex", top: pageY, left: pageX }
-        : { ...prevStyle, display: "none", top: pageY, left: pageX };
+        ? {
+            ...prevStyle,
+            display: "flex",
+            top: props.currentLocation.Y > 70 ? pageY - 200 : pageY,
+
+            left: pageX,
+          }
+        : {
+            ...prevStyle,
+            display: "none",
+            top: pageY,
+            left: pageX,
+          };
     });
   };
 
   //
   const handleClick = (e) => {
-    popUpOnClick(e, setPopUpMenuStyle);
     const { offsetTop, offsetLeft, width, height } = e.target;
 
     // Get the exact location of the cursor in percentage
@@ -67,12 +79,13 @@ export default function GameBoard() {
     const pageY = Math.floor((positionY / height) * 100);
 
     setSelectedLocation({ X: pageX, Y: pageY });
+
+    popUpOnClick(e, setPopUpMenuStyle);
   };
 
   //checks if coordinates are correct and matches the name
   const menuItemClick = (e) => {
     const { textContent, name } = e.target;
-    console.log(name);
 
     charLocation.map((char) => {
       if (
@@ -113,6 +126,7 @@ export default function GameBoard() {
           src={imageURL}
           onClick={(e) => handleClick(e)}
           onDragStart={(e) => e.preventDefault()}
+          onMouseMove={(e) => props.findMouseLocation(e)}
         ></img>
       )}
 
