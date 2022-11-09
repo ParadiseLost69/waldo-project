@@ -69,17 +69,23 @@ export default function GameBoard() {
     setSelectedLocation({ X: pageX, Y: pageY });
   };
 
+  //checks if coordinates are correct and matches the name
   const menuItemClick = (e) => {
-    const { textContent } = e.target;
-    console.log(textContent);
+    const { textContent, name } = e.target;
+    console.log(name);
 
     charLocation.map((char) => {
       if (
-        selectedLocation.X >= char.XLow &&
-        selectedLocation.X <= char.XHigh &&
-        selectedLocation.Y <= char.YHigh &&
-        selectedLocation.Y >= char.YLow &&
-        char.name == textContent
+        (selectedLocation.X >= char.XLow &&
+          selectedLocation.X <= char.XHigh &&
+          selectedLocation.Y <= char.YHigh &&
+          selectedLocation.Y >= char.YLow &&
+          char.name === textContent) ||
+        (selectedLocation.X >= char.XLow &&
+          selectedLocation.X <= char.XHigh &&
+          selectedLocation.Y <= char.YHigh &&
+          selectedLocation.Y >= char.YLow &&
+          char.name === name)
       ) {
         console.log("You got " + char.name);
         CheckAndAddCharacter(char.name);

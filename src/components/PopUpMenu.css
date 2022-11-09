@@ -4,6 +4,7 @@
   width: fit-content;
   cursor: pointer;
   border-radius: 1rem;
+  border: 0.0625rem solid black;
 }
 
 .popup-menu__list {
@@ -12,10 +13,16 @@
 .popup-menu__list--item {
   padding: 1rem;
   border-bottom: 0.0625rem solid grey;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .popup-menu__list--item:hover {
   background-color: grey;
+}
+
+.popup-menu__list--item * {
+  margin-inline: 0.5rem;
 }
 .top-item {
   border-top-left-radius: 1rem;
@@ -27,5 +34,11 @@
   border-bottom-right-radius: 1rem;
 }
 .verified {
-  background-color: green;
+  background-color: rgb(3, 255, 3);
+}
+
+.popup-menu__list--item--image {
+  height: 2rem;
+  border-radius: 100rem;
+  border: 0.12rem solid aqua;
 }

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import MortySource from "../images/morty-pic.jpeg";
+import PencilSource from "../images/pencilvester.gif";
+import TinklesSource from "../images/tinkles-pic.webp";
 import "./PopUpMenu.css";
 
 export default function PopUpMenu(props) {
@@ -8,6 +11,7 @@ export default function PopUpMenu(props) {
     <div className="popup-menu" style={props.style}>
       <ul className="popup-menu__list">
         <li
+          name="Morty"
           onClick={(e) => {
             props.menuItemClick(e);
           }}
@@ -15,6 +19,12 @@ export default function PopUpMenu(props) {
             verified("Morty") ? "verified" : "unverified"
           }`}
         >
+          <img
+            name="Morty"
+            className="popup-menu__list--item--image"
+            src={MortySource}
+            alt="morty smith from the animated television seriies 'Rick and Morty' looking frightened"
+          />
           Morty
         </li>
         <li
@@ -23,14 +33,26 @@ export default function PopUpMenu(props) {
             verified("Pencilvester") ? "verified" : "unverified"
           }`}
         >
+          <img
+            name="Pencilvester"
+            className="popup-menu__list--item--image"
+            src={PencilSource}
+            alt="Pencilvester from the animated television series 'Rick and Morty' dancing"
+          />
           Pencilvester
         </li>
         <li
           onClick={(e) => props.menuItemClick(e)}
           className={`popup-menu__list--item bottom-item ${
-            verified("Tinklesgit") ? "verified" : "unverified"
+            verified("Tinkles") ? "verified" : "unverified"
           }`}
         >
+          <img
+            name="Tinkles"
+            className="popup-menu__list--item--image"
+            src={TinklesSource}
+            alt="Tinkles from the animated television series 'Rick and Morty' dancing"
+          />
           Tinkles
         </li>
       </ul>
