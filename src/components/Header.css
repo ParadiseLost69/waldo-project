@@ -50,4 +50,6 @@
 }
 .header__characters--character-name {
   text-align: center;
+  text-decoration-color: red;
+  margin-bottom: 0.5rem;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import MortySource from "../images/morty-pic.jpeg";
+import MortySource from "../images/morty-in-space.jpg";
 import TinklesSource from "../images/tinkles-pic.jpg";
 import PencilSource from "../images/pencilvester.gif";
 import "./StartModal.css";

@@ -5,21 +5,48 @@ import PencilSource from "../images/pencilvester.gif";
 
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ selectedCharacters }) {
   return (
     <div className="header">
       <div className="header__characters">
         <div className="header__characters--block">
           <img className="header__characters--image" src={MortySource} />
-          <h3 className="header__characters--character-name">Morty</h3>
+          <h3
+            className="header__characters--character-name"
+            style={
+              selectedCharacters.includes("Morty")
+                ? { textDecoration: "line-through", textDecorationColor: "red" }
+                : { textDecoration: "none" }
+            }
+          >
+            Morty
+          </h3>
         </div>
         <div className="header__characters--block">
           <img className="header__characters--image" src={TinklesSource} />
-          <h3 className="header__characters--character-name">Tinkles</h3>
+          <h3
+            className="header__characters--character-name"
+            style={
+              selectedCharacters.includes("Tinkles")
+                ? { textDecoration: "line-through", textDecorationColor: "red" }
+                : { textDecoration: "none" }
+            }
+          >
+            Tinkles
+          </h3>
         </div>
         <div className="header__characters--block">
           <img className="header__characters--image" src={PencilSource} />
-          <h3 className="header__characters--character-name">Pencilvester</h3>
+          <h3
+            className="header__characters--character-name"
+            style={
+              selectedCharacters.includes("Pencilvester")
+                ? { textDecoration: "line-through", textDecorationColor: "red" }
+                : { textDecoration: "none" }
+            }
+          >
+            Pencilvester
+          </h3>
         </div>
       </div>
     </div>

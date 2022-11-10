@@ -1,17 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTTL58Qc2A65NUXRWJbK4UxXJ1uVtFaLw",
-  authDomain: "waldo-app-c7675.firebaseapp.com",
-  projectId: "waldo-app-c7675",
-  storageBucket: "waldo-app-c7675.appspot.com",
-  messagingSenderId: "70828184317",
-  appId: "1:70828184317:web:16afdfddc5cacbe6cb2494",
+  apiKey: "AIzaSyBCWilzO_QD68M21E0CEj4UhTQyQUseQQE",
+  authDomain: "find-the-parasite.firebaseapp.com",
+  projectId: "find-the-parasite",
+  storageBucket: "find-the-parasite.appspot.com",
+  messagingSenderId: "994013510163",
+  appId: "1:994013510163:web:a9d51210215c3f27cc9de6",
 };
 
 const app = initializeApp(firebaseConfig);
-
+const db = getFirestore(app);
 const storage = getStorage(app);
 
-export { app, storage };
+export { app, storage, db };

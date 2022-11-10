@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MortySource from "../images/morty-pic.jpeg";
 import PencilSource from "../images/pencilvester.gif";
-import TinklesSource from "../images/tinkles-pic.jpg";
+import TinklesSource from "../images/tinkles-face.jpg";
 import "./PopUpMenu.css";
 
 export default function PopUpMenu(props) {

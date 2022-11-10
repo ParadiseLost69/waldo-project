@@ -5,7 +5,6 @@ import { storage } from "../firebase/config";
 import Header from "./Header";
 import Modal from "./Modal";
 import PopUpMenu from "./PopUpMenu";
-import Timer from "./Timer";
 
 export default function GameBoard(props) {
   const [imageURL, setImageURL] = useState(null);
@@ -59,7 +58,7 @@ export default function GameBoard(props) {
         ? {
             ...prevStyle,
             display: "flex",
-            top: props.currentLocation.Y > 70 ? pageY - 200 : pageY,
+            top: props.currentLocation.Y > 65 ? pageY - 200 : pageY,
 
             left: pageX,
           }
@@ -140,7 +139,7 @@ export default function GameBoard(props) {
           setStartTimer={props.setStartTimer}
           setIsStarted={props.setIsStarted}
           time={props.time}
-          setTime = {props.setTime}
+          setTime={props.setTime}
         />
       )}
     </>
