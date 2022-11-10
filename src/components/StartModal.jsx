@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MortySource from "../images/morty-pic.jpeg";
-import TinklesSource from "../images/tinkles-pic.webp";
+import TinklesSource from "../images/tinkles-pic.jpg";
 import PencilSource from "../images/pencilvester.gif";
 import "./StartModal.css";
 
@@ -41,7 +41,7 @@ export default function StartModal({ isStarted, setIsStarted, setStartTimer }) {
               Pencilvester
             </h3>
           </div>
-          <h1 className="sub-heading">I'm pretty sure its these guys.</h1>
+          <h1 className="sub-heading">I'm pretty sure it's these guys.</h1>
         </div>
       </div>
     </div>

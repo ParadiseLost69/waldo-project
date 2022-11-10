@@ -1,5 +1,6 @@
 .popup-menu {
-  background-color: white;
+  background-color: #262626ed;
+  color: white;
   display: flex;
   width: fit-content;
   cursor: pointer;
