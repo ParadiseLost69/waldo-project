@@ -1,16 +1,78 @@
 .start-modal__background {
-  background-color: white;
-  height: 100%;
-  width: 100%;
+  display: grid;
+  background-color: #262626;
+  height: 100vh;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
 }
 
 .start-modal {
-  height: 20vh;
   width: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+.start-modal__heading-button--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+  grid-row: 2;
+  margin: 1rem;
+}
+.start-modal__heading,
+.heading,
+.start-modal__button,
+.sub-heading {
+  font-family: "Wubba Lubba Dub Dub", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  color: aqua;
+  text-shadow: -0.0625rem -0.0625rem 0 yellow, 0.0625rem -0.0625rem 0 yellow,
+    -0.0625rem 0.0625rem 0 yellow, 0.0625rem 0.0625rem 0 yellow;
+
+  text-align: center;
+}
+.start-modal__heading {
+  letter-spacing: 0.5rem;
+  font-size: 4rem;
+}
+.start-modal__button {
+  font-size: 2rem;
+  border: 0.0625rem solid yellow;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.character-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2 1fr);
+
+  justify-content: center;
+}
+.character-container * {
+  margin: 1rem;
+}
+.character-container__image {
+  height: 6.25rem;
+  border-radius: 20rem;
+}
+
+.character-container__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character-container__character-name {
+  font-size: 1.5rem;
+}
+
+.sub-heading {
+  grid-column: 1/4;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 }
