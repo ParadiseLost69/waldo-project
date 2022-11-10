@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import GameBoard from "./components/GameBoard";
-import PopUpMenu from "./components/PopUpMenu";
+import StartModal from "./components/StartModal";
 import Timer from "./components/Timer";
+import useInterval from "./components/logic/useInterval";
 function App() {
+  const [isStarted, setIsStarted] = useState(false);
+
   const [targetBox, setTargetBox] = useState({
     position: "absolute",
     display: "none",
     top: 0,
     left: 0,
   });
-  const [timerStyle, setTimerStyle] = useState({
-    position: "fixed",
-    top: 50,
-    left: 50,
-    display: "block",
-  });
-  const [showTimer, setShowTimer] = useState(true);
+
+  //timer state + time
+  const [startTimer, setStartTimer] = useState(false);
+  const [time, setTime] = useState(0);
+  //
 
   const [currentLocation, setCurrentLocation] = useState({ X: null, Y: null });
 
@@ -26,7 +27,6 @@ function App() {
     // Get the exact location of the cursor in percentage
     const positionY = e.pageY - offsetTop;
     const pageY = Math.floor((positionY / height) * 100);
-
     setCurrentLocation({ Y: pageY });
   };
 
@@ -42,29 +42,34 @@ function App() {
     });
   };
 
-  const handleClick = () => {
-    setShowTimer(true);
-  };
-  //Issue - cant click through div to select character
   return (
     <main onMouseMove={(e) => handleMove(e)} className="App">
-      <button onClick={handleClick}>show timer</button>
-      {showTimer && (
-        <Timer
-          timerStyle={timerStyle}
-          setTimerStyle={setTimerStyle}
-          showTimer={showTimer}
-          setShowTimer={setShowTimer}
+      {!isStarted && (
+        <StartModal
+          setIsStarted={setIsStarted}
+          isStarted={isStarted}
+          setStartTimer={setStartTimer}
         />
       )}
-      <div className="target-box" style={targetBox}>
-        <div className="vertical-crosshair"></div>
-        <div className="horizontal-crosshair"></div>
+      <div className="game-board__container">
+        {isStarted && (
+          <div className="target-box" style={targetBox}>
+            <div className="vertical-crosshair"></div>
+            <div className="horizontal-crosshair"></div>
+          </div>
+        )}
+
+        <GameBoard
+          currentLocation={currentLocation}
+          findMouseLocation={findMouseLocation}
+          startTimer={startTimer}
+          setStartTimer={setStartTimer}
+          setIsStarted={setIsStarted}
+          time={time}
+          setTime={setTime}
+        />
+        {startTimer && <Timer setTime={setTime} time={time} />}
       </div>
-      <GameBoard
-        currentLocation={currentLocation}
-        findMouseLocation={findMouseLocation}
-      />
     </main>
   );
 }

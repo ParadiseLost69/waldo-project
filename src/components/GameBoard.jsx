@@ -1,10 +1,11 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./GameBoard.css";
 import { ref, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/config";
 import Header from "./Header";
 import Modal from "./Modal";
 import PopUpMenu from "./PopUpMenu";
-import "./GameBoard.css";
+import Timer from "./Timer";
 
 export default function GameBoard(props) {
   const [imageURL, setImageURL] = useState(null);
@@ -13,6 +14,8 @@ export default function GameBoard(props) {
     { name: "Tinkles", XLow: 64, XHigh: 68, YLow: 72, YHigh: 85 },
     { name: "Pencilvester", XLow: 42, XHigh: 44, YLow: 31, YHigh: 42 },
   ]);
+
+  //refactor so that state changes to unmount and mount items (eg: state"start-page"/ "game-page" / "end-page" )
   const [popUpMenuStyle, setPopUpMenuStyle] = useState({
     position: "absolute",
     display: "none",
@@ -34,7 +37,7 @@ export default function GameBoard(props) {
     });
   }, []);
 
-  //checks to see if characters have already been selected and adds them to array if not. detects win.
+  //checks to see if characters have already been selected and adds them to array if not.
   function CheckAndAddCharacter(characterName) {
     if (selectedCharacters.length > 0) {
       if (selectedCharacters.includes(characterName)) {
@@ -46,7 +49,7 @@ export default function GameBoard(props) {
     }
   }
 
-  //Brings pop up on Click.
+  //Brings pop up on Click. (REFACTOR: change true or false state)
   const popUpOnClick = (e, setStyleFunction) => {
     const { pageX, pageY } = e;
 
@@ -132,7 +135,13 @@ export default function GameBoard(props) {
       )}
 
       {selectedCharacters.length === 3 && (
-        <Modal setSelectedCharacters={setSelectedCharacters} />
+        <Modal
+          setSelectedCharacters={setSelectedCharacters}
+          setStartTimer={props.setStartTimer}
+          setIsStarted={props.setIsStarted}
+          time={props.time}
+          setTime = {props.setTime}
+        />
       )}
     </>
   );

@@ -1,0 +1,16 @@
+.start-modal__background {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.start-modal {
+  height: 20vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
