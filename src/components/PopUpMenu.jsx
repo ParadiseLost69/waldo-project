@@ -20,6 +20,7 @@ export default function PopUpMenu(props) {
           }`}
         >
           <img
+            onDragStart={(e) => e.preventDefault()}
             name="Morty"
             className="popup-menu__list--item--image"
             src={MortySource}
@@ -34,6 +35,7 @@ export default function PopUpMenu(props) {
           }`}
         >
           <img
+            onDragStart={(e) => e.preventDefault()}
             name="Pencilvester"
             className="popup-menu__list--item--image"
             src={PencilSource}
@@ -48,6 +50,7 @@ export default function PopUpMenu(props) {
           }`}
         >
           <img
+            onDragStart={(e) => e.preventDefault()}
             name="Tinkles"
             className="popup-menu__list--item--image"
             src={TinklesSource}
