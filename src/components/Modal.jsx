@@ -59,7 +59,7 @@ export default function Modal(props) {
           <p className="leaderboard__item--name">
             {index + 1}: {item.name}
           </p>
-          <p className="leaderboard__item--time">{item.time / 100} </p>
+          <p className="leaderboard__item--time">{item.time / 100} seconds</p>
         </div>
       );
     } else {
@@ -70,16 +70,12 @@ export default function Modal(props) {
   return (
     <div className="modal">
       <div className="modal__container">
-        <div className="modal__message">
-          <h2 className="modal__message--heading">
-            You WIN! Your time was: {userTime / 100} seconds
-          </h2>
-          <button className="modal__message--button" onClick={handleClick}>
-            Play again
-          </button>
-        </div>
+        <h1 className="modal__message--heading">
+          Time: {userTime / 100} Seconds!
+        </h1>
+
         <form className="modal__form">
-          <label htmlFor="user-name">Enter Your Name and submit a score</label>
+          <label htmlFor="user-name">Enter Your Name and Submit a Score</label>
           <input
             required={true}
             requiredtxt="Please enter a name"
@@ -102,6 +98,9 @@ export default function Modal(props) {
           <h1 className="leaderboard__title">Leaderboard</h1>
           <div className="leaderboard__items">{displayLeaderboard}</div>
         </div>
+        <button className="leaderboard__button" onClick={handleClick}>
+          Play again
+        </button>
       </div>
     </div>
   );

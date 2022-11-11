@@ -130,6 +130,7 @@ export default function GameBoard(props) {
           onClick={(e) => handleClick(e)}
           onDragStart={(e) => e.preventDefault()}
           onMouseMove={(e) => props.findMouseLocation(e)}
+          alt="gameboard displaying hundreds of Rick and Morty characters."
         ></img>
       )}
 

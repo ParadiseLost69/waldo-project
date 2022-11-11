@@ -16,10 +16,11 @@
   border-bottom: 0.0625rem solid grey;
   display: flex;
   justify-content: flex-start;
+  transition: background-color 0.1s ease-in-out;
 }
 
 .popup-menu__list--item:hover {
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.527);
 }
 
 .popup-menu__list--item * {

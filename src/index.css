@@ -55,3 +55,24 @@ p {
   margin: 0;
   padding: 0;
 }
+
+/* button {
+  transition: transform 1s ease-in;
+} */
+button:hover {
+  animation: shift-up 1s ease forwards;
+}
+
+@keyframes shift-up {
+  0% {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  /* 80% {
+    transform: translateY(-5px);
+  } */
+  100% {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 5px #393939;
+  }
+} ;

@@ -20,7 +20,7 @@ export default function StartModal({ isStarted, setIsStarted, setStartTimer }) {
             <span>WE NEED YOUR HELP TO KILL THE IMPOSTERS.</span>
           </h1>
           <button
-            className="start-modal__button start-button"
+            className="start-modal__button start-button button"
             onClick={handleClick}
           >
             START
@@ -28,15 +28,27 @@ export default function StartModal({ isStarted, setIsStarted, setStartTimer }) {
         </div>
         <div className="character-container">
           <div className="character-container__block">
-            <img className="character-container__image" src={MortySource} />
+            <img
+              className="character-container__image"
+              alt="Morty Smith sitting and startled"
+              src={MortySource}
+            />
             <h3 className="character-container__character-name">Morty</h3>
           </div>
           <div className="character-container__block">
-            <img className="character-container__image" src={TinklesSource} />
+            <img
+              className="character-container__image"
+              alt="Tinkles the unicorn lamb standing among parasites"
+              src={TinklesSource}
+            />
             <h3 className="character-container__character-name">Tinkles</h3>
           </div>
           <div className="character-container__block">
-            <img className="character-container__image" src={PencilSource} />
+            <img
+              className="character-container__image"
+              alt="Pencilvester dancing"
+              src={PencilSource}
+            />
             <h3 className="character-container__character-name">
               Pencilvester
             </h3>

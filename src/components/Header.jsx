@@ -10,7 +10,11 @@ export default function Header({ selectedCharacters }) {
     <div className="header">
       <div className="header__characters">
         <div className="header__characters--block">
-          <img className="header__characters--image" src={MortySource} />
+          <img
+            className="header__characters--image"
+            alt="Morty Smith's face looking startled"
+            src={MortySource}
+          />
           <h3
             className="header__characters--character-name"
             style={
@@ -23,7 +27,11 @@ export default function Header({ selectedCharacters }) {
           </h3>
         </div>
         <div className="header__characters--block">
-          <img className="header__characters--image" src={TinklesSource} />
+          <img
+            className="header__characters--image"
+            alt="Tinkles the unicorn sheep dancing"
+            src={TinklesSource}
+          />
           <h3
             className="header__characters--character-name"
             style={
@@ -36,7 +44,11 @@ export default function Header({ selectedCharacters }) {
           </h3>
         </div>
         <div className="header__characters--block">
-          <img className="header__characters--image" src={PencilSource} />
+          <img
+            className="header__characters--image"
+            alt="Pencilvester dancing"
+            src={PencilSource}
+          />
           <h3
             className="header__characters--character-name"
             style={
