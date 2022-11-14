@@ -1,7 +1,6 @@
 {
   "name": "waldo-project",
   "version": "0.1.0",
-  "homepage": "https://ParadiseLost69.github.io/waldo-project",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
