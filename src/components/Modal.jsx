@@ -25,7 +25,7 @@ export default function Modal(props) {
   useEffect(() => {
     setUserTime(props.time);
     props.setStartTimer(false);
-  }, []);
+  }, [props]);
 
   const handleClick = () => {
     props.setSelectedCharacters([]);
@@ -50,9 +50,8 @@ export default function Modal(props) {
     console.log(name);
   };
 
-  const sortedLeaderboard =
-    leaderboard && leaderboard.sort((a, b) => a.time - b.time);
-  const displayLeaderboard = leaderboard.map((item, index) => {
+  leaderboard && leaderboard.sort((a, b) => a.time - b.time);
+  const displayLeaderboard = leaderboard.forEach((item, index) => {
     if (index <= 9) {
       return (
         <div className="leaderboard__item">
