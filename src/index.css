@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Wubba Lubba Dub Dub";
-  src: url("/Users/teddyloukas/Pictures/web-dev-images/rick-and-morty-font/WubbaLubbaDubDub.otf");
+  src: url("font/WubbaLubbaDubDub.otf");
 }
 
 body {
