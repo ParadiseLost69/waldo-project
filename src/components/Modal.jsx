@@ -51,18 +51,17 @@ export default function Modal(props) {
   };
 
   leaderboard && leaderboard.sort((a, b) => a.time - b.time);
-  const displayLeaderboard = leaderboard.forEach((item, index) => {
+  // eslint-disable-next-line
+  const displayLeaderboard = leaderboard.map((item, index) => {
     if (index <= 9) {
       return (
-        <div className="leaderboard__item">
+        <div className="leaderboard__item" key={index}>
           <p className="leaderboard__item--name">
             {index + 1}: {item.name}
           </p>
           <p className="leaderboard__item--time">{item.time / 100} seconds</p>
         </div>
       );
-    } else {
-      return;
     }
   });
 

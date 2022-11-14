@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MortySource from "../images/morty-in-space.jpg";
 import TinklesSource from "../images/tinkles-pic.jpg";
 import PencilSource from "../images/pencilvester.gif";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Timer.css";
 
 export default function Timer(props) {
@@ -8,7 +8,7 @@ export default function Timer(props) {
     }, 10);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [props]);
 
   return (
     <div className="timer">

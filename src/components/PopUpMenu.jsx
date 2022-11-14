@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MortySource from "../images/morty-pic.jpeg";
 import PencilSource from "../images/pencilvester.gif";
 import TinklesSource from "../images/tinkles-face.jpg";
