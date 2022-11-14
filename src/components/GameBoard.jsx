@@ -8,11 +8,11 @@ import PopUpMenu from "./PopUpMenu";
 
 export default function GameBoard(props) {
   const [imageURL, setImageURL] = useState(null);
-  const [charLocation, setCharLocation] = useState([
+  const charLocation = [
     { name: "Morty", XLow: 50, XHigh: 56, YLow: 32, YHigh: 57 },
     { name: "Tinkles", XLow: 64, XHigh: 68, YLow: 72, YHigh: 85 },
     { name: "Pencilvester", XLow: 42, XHigh: 44, YLow: 31, YHigh: 42 },
-  ]);
+  ];
 
   //refactor so that state changes to unmount and mount items (eg: state"start-page"/ "game-page" / "end-page" )
   const [popUpMenuStyle, setPopUpMenuStyle] = useState({
@@ -90,7 +90,7 @@ export default function GameBoard(props) {
   const menuItemClick = (e) => {
     const { textContent, name } = e.target;
 
-    charLocation.map((char) => {
+    charLocation.forEach((char) => {
       if (
         (selectedLocation.X >= char.XLow &&
           selectedLocation.X <= char.XHigh &&
@@ -103,7 +103,6 @@ export default function GameBoard(props) {
           selectedLocation.Y >= char.YLow &&
           char.name === name)
       ) {
-        console.log("You got " + char.name);
         CheckAndAddCharacter(char.name);
       }
     });

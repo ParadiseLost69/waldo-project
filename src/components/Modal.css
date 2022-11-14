@@ -94,7 +94,7 @@
 .leaderboard__item {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   margin-bottom: 0.7rem;
   border-bottom: 0.0625rem solid aqua;
   text-align: start;

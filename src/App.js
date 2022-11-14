@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import GameBoard from "./components/GameBoard";
 import StartModal from "./components/StartModal";
 import Timer from "./components/Timer";
-import useInterval from "./components/logic/useInterval";
 function App() {
   const [isStarted, setIsStarted] = useState(false);
 
