@@ -25,3 +25,7 @@ I discovered that I could offset the y location which solved the latter issue bu
 
 4. Firebase
    Getting firebase set up was easier than I thought once I had read the documentation. Firestore and Storage worked pretty smoothly. I actually ran into issues with hosting (which should have been the simplest) as the documentation basically said to use the CLI and hit init. Nothing seemed to work until I figured out that I had to edit the JSON to work properly.
+
+This application was built using React and CSS.
+
+This is a game similar to "Where's Waldo" or "Where's Wally" in which you have to search for Parasites that have overtaken your house. Find and shoot the parasites in order to win.
